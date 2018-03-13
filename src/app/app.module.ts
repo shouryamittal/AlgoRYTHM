@@ -10,13 +10,14 @@ import { LandingComponent } from './landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
-    LandingComponent
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
