@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
+    LandingComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
