@@ -1,0 +1,146 @@
+<ul class="nav">
+  <a class="navbar-brand" href="#">
+      <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      AlgoRYTHM
+    </a>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+
+<section>
+  <div class="container base_container">
+    <div class="row">
+      
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="intro">
+          <p><i class="fa fa-list fa-1x" aria-hidden="true" style="color: #b0bec5"></i>  Course <b>Overview</b></p>
+        </div>
+
+        <div class="courses">
+          <div class="container mid_container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card">
+                  <div class="card-body course_content">
+                    <img src="assets/img/java2.png" style="height: 129px; width :130px">
+                    <p><a href="#">Learn Content</a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card">
+                  <div class="card-body course_content">
+                    <img src="assets/img/c1.jpg" style="height: 129px; width :100px">
+                    <p><a href="#">Learn Content</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="card">
+                  <div class="card-body course_content">
+                    <img src="assets/img/angular.png" style="height: 129px; width :130px">
+                    <p><a href="#">Learn Content</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="info">
+          <div class="row">
+            <div class="col-lg-8">
+              <p><b>Welcome!</b></p>
+              <p>USer</p>
+            </div>
+            <div class="col-lg-4">
+              <i class="fa fa-pencil" aria-hidden="true" style="color:white; padding-top: 30px" (click)="open(content)"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="updates">
+          <p>Latest Updates</p>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/angular.png" style="height: 130px; width :100px;text-align:center">
+                </div>
+                <div class="col-lg-8">
+                  <p class="card-text update_info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/c1.jpg" style="height: 130px; width :100px;text-align:center">
+                </div>
+                <div class="col-lg-8">
+                  <p class="card-text update_info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img src="assets/img/java1.png" style="height: 130px; width :100px;text-align:center">
+                </div>
+                <div class="col-lg-8">
+                  <p class="card-text update_info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Edit your details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="exampleInputName">User Name</label>
+        <input type="text" class="form-control" id="exampleInputName" aria-describedby="userHelp" placeholder="Enter username" name="username" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" ngModel [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel>
+      </div>
+      <button type="button" class="btn btn-outline-dark modalCloseBtn" (click)="c('Close click')">Close</button>
+    </form>
+    <pre>{{f.value|json}}</pre>
+  </div>
+</ng-template>
