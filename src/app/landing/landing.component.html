@@ -1,0 +1,39 @@
+<section class="landing">
+  <div class="top-row">
+    <div class="container">
+      <div class="row">
+        <div class=" col-sm-12 col-xs-12 col-md-6 col-lg-7 landing-content">
+          <h1>Be in Rythm with AlgoRYTHM</h1>
+          <p>Get access to all your favorite algorithms and codes !!</p>
+        </div>
+        <div class="col-sm-12 col-xs-12 col-md-6 offset-lg-1 col-lg-4  signup-card">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Signup</h2>
+              <form action="" novalidate (ngSubmit)="register()" name="signup" >
+                <div class="form-group" [ngClass]="{'border-danger':email.invalid && (email.dirty || email.touched)}">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Enter email" name="email" [(ngModel)]="userEmail"  required #email="ngModel">
+                  <div class="form-control-feedback" *ngIf="email.errors &&(email.dirty || email.touched)">
+                    <p *ngIf="email.errors.required">Email required</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="userPassword" name="password"required>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Confirm Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" [(ngModel)]="confirmPassword" name="cpass" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
